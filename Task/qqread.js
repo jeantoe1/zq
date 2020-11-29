@@ -756,30 +756,18 @@ tz+='【周时长奖励'+(i+1)+'】:领取'+Packageid[i]+'阅豆\n'
 })
  }
 
-
-
-
-
-
-    
-
 function showmsg() {
-
-	
-console.log(tz)
-	
-if (notifyInterval==1)
-$.msg(jsname,'',tz)//显示所有通知
-
-else if (notifyInterval==2&&box.data.amount>=0)
-$.msg(jsname,'',tz)//宝箱领取成功通知
-
-
-else if (notifyInterval==3&&box.data.count==0||box.data.count==18||box.data.count==36||box.data.count==54||box.data.count==72)
-$.msg(jsname,'',tz)//宝箱每18次通知一次
-
-
-
+  console.log(tz)
+  try{
+  if (notifyInterval==1)
+    $.msg(jsname,'',tz)//显示所有通知
+  else if (notifyInterval==2&&box.data.amount>=0)
+    $.msg(jsname,'',tz)//宝箱领取成功通知
+  else if (notifyInterval==3&&box.data.count==0||box.data.count==18||box.data.count==36||box.data.count==54||box.data.count==72)
+    $.msg(jsname,'',tz)//宝箱每18次通知一次
+ }catch(e){
+   console.log(e)
+ }
 }
 
 
